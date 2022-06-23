@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+header {
+  background: #8e9aaf;
+  height: 32rem;
+  position: relative;
+  text-align: center;
+}
+
+.logo {
+  display: none;
+  margin: 3.2rem auto;
+  filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.25));
+}
+
+.logo-motion {
+  margin: 3.2rem auto;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.logo-motion:hover {
+  animation: rotation 700ms linear infinite;
+}
+
+header h1 {
+  background: #cbc0d3;
+  font-family: "Staatliches";
+  font-size: 4rem;
+  line-height: 3.4rem;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  padding: 0.8rem 0;
+}
+
+.conteudo {
+  background: #eff1ff;
+  position: relative;
+  padding: 1.4rem 3.8rem 6rem;
+  text-align: center;
+}
+
+.conteudo p {
+  font-family: "Palanquin";
+  line-height: 2.5rem;
+  color: #23053a;
+
+  margin-bottom: 6rem;
+}
+
+ul {
+  list-style: none;
+  display: grid;
+  gap: 3.2rem;
+}
+
+li h2 {
+  background: #feeafa;
+  border-radius: 20px;
+  position: absolute;
+
+  padding: 0 2.4rem;
+
+  font-family: "Staatliches";
+  font-size: 2rem;
+  line-height: 3.4rem;
+
+  letter-spacing: 0.05em;
+
+  color: #4a4e69;
+  z-index: 2;
+
+  animation: labelanime 700ms linear infinite alternate;
+}
+
+ul li {
+  position: relative;
+}
+
+ul li img {
+  transition: transform 200ms;
+}
+
+ul li img:hover {
+  filter: brightness(1.5);
+  filter: saturate(2.5);
+  transform: scale(1.05);
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes labelanime {
+  from {
+    right: 8rem;
+    top: 1.7rem;
+  }
+
+  to {
+    right: 3rem;
+    top: 1.7rem;
+  }
+}
+
+@media (min-width: 500px) {
+  body {
+    max-width: 100vw;
+  }
+
+  ul {
+    grid-template-areas:
+      "A B"
+      "C B"
+      "C D";
+
+    max-width: 70rem;
+    margin: 0 auto;
+  }
+
+  ul li:nth-child(1) {
+    grid-area: A;
+  }
+  ul li:nth-child(2) {
+    grid-area: B;
+  }
+  ul li:nth-child(3) {
+    grid-area: D;
+  }
+  ul li:nth-child(4) {
+    grid-area: C;
+  }
+}
